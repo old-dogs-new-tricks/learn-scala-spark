@@ -1,0 +1,25 @@
+
+:paste ch3.3.2.1.sc
+
+println("> Timestamp(1, 1, 1).seconds")
+Timestamp(1, 1, 1).seconds
+
+println("> Person(\"Michael Zubin\").firstName")
+Person("Michael Zubin").firstName
+
+println("> Person(\"Robin Chuna\").lastName")
+Person("Robin Chuna").lastName
+
+:paste ch3.3.2.2.sc
+
+:load ch3.data.films.sc
+
+println("> Director.older(eastwood, nolan).name")
+Director.older(eastwood, nolan).name
+
+println("> Film.highestRating(darkKnight, outlawJoseyWales)")
+Film.highestRating(darkKnight, outlawJoseyWales)
+
+println("> Film.oldestDirectorAtTheTime(dieHard, darkKnight).name")
+Film.oldestDirectorAtTheTime(dieHard, darkKnight).name
+

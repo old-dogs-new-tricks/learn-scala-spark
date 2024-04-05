@@ -1,0 +1,45 @@
+
+// Exercise - Cats
+:paste ch3.4.5.1.sc
+
+val ozy = new Cat(name = "Oswald", food = "Milk")
+val heny = new Cat(name = "Henderson", food = "Chips", colour = "Ginger")
+val tin = new Cat(name = "Quentin", food = "Curry", colour = "Tabby and white")
+
+// Exercise - Films
+:paste ch3.4.5.2.sc
+
+:load ch3.data.films.sc
+
+println("> Director.older(eastwood, nolan).name")
+Director.older(eastwood, nolan).name
+
+println("> Film.highestRating(darkKnight, outlawJoseyWales)")
+Film.highestRating(darkKnight, outlawJoseyWales)
+
+println("> Film.oldestDirectorAtTheTime(dieHard, darkKnight).name")
+Film.oldestDirectorAtTheTime(dieHard, darkKnight).name
+
+// Exercise - Counter
+:paste ch3.4.5.3.sc
+
+new Counter(10).inc.dec.inc.inc.count
+
+new Counter(10).inc.inc(10).count
+
+Counter(0) // construct objects without `new`
+// res16: Counter = Counter(0)
+Counter().inc // printout shows the value of `count`
+// res17: Counter = Counter(1)
+Counter().inc.dec == Counter().dec.inc // semantic equality check
+// res18: Boolean = true
+
+// Exercise - Person
+:paste ch3.4.5.4.sc
+
+println("Person(firstName = \"Michael\", lastName = \"Zubin\")")
+Person(firstName = "Michael", lastName = "Zubin").firstName
+
+println("> Person(\"Robin Chuna\").lastName")
+Person("Robin Chuna").lastName
+
