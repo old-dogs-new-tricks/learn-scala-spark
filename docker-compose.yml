@@ -22,9 +22,16 @@ services:
   spark-shell:
     command:
     - /opt/spark/bin/spark-shell
+    environment:
+      SPARK_LOCAL_IP: spark-shell
     image: apache/spark:latest
     networks:
       default: null
+    ports:
+    - mode: ingress
+      target: 4040
+      published: "4040"
+      protocol: tcp
     stdin_open: true
     tty: true
     volumes:

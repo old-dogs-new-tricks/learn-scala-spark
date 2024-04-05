@@ -11,5 +11,4 @@ services:
       - spark://spark-server:7077
     volumes: 
       - ./work:/opt/spark/work-dir
-
-
+    
