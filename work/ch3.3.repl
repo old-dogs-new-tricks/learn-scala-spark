@@ -1,5 +1,5 @@
 
-:paste ch3.3.2.1.sc
+:paste ch3.3.2.1.scala
 
 println("> Timestamp(1, 1, 1).seconds")
 Timestamp(1, 1, 1).seconds
@@ -10,9 +10,9 @@ Person("Michael Zubin").firstName
 println("> Person(\"Robin Chuna\").lastName")
 Person("Robin Chuna").lastName
 
-:paste ch3.3.2.2.sc
+:paste ch3.3.2.2.scala
 
-:load ch3.data.films.sc
+:load ch3.data.films.scala
 
 println("> Director.older(eastwood, nolan).name")
 Director.older(eastwood, nolan).name
