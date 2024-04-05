@@ -32,6 +32,43 @@ The Makefile (at this time) has two targets.
 
 For convenience, the Makefile will detect if the `spark-shell` service is running and use `run --rm` if not. If available, it will use `docker compose exec...`.
 
+## REPL Tips
 
+As noted in the book, when you get to ch3.3, you'll want to use the `:paste` command in the REPL to enter multi-line code blocks. This is repl-speak for "include" that takes input from the clipboard or a file.
 
+I therefor started putting exercises into files named for the exercise number. The `:paste` command is then used to include the file in a `.repl` file.
 
+To run the exercises, you can use the `:load` command in the REPL to include the `.repl` file.
+
+``` scala
+// Exercise - Cats
+:paste ch3.4.5.1.scala
+
+val ozy = new Cat(name = "Oswald", food = "Milk")
+val heny = new Cat(name = "Henderson", food = "Chips", colour = "Ginger")
+val tin = new Cat(name = "Quentin", food = "Curry", colour = "Tabby and white")
+
+// Exercise - Films
+:paste ch3.4.5.2.scala
+
+:load ch3.data.films.scala
+
+println("> Director.older(eastwood, nolan).name")
+Director.older(eastwood, nolan).name
+
+println("> Film.highestRating(darkKnight, outlawJoseyWales)")
+Film.highestRating(darkKnight, outlawJoseyWales)
+
+println("> Film.oldestDirectorAtTheTime(dieHard, darkKnight).name")
+Film.oldestDirectorAtTheTime(dieHard, darkKnight).name
+```
+
+``` scala
+scala> :load ch3.4.repl
+```
+
+## Worksheets
+
+To get started quickly and to follow the examples in the book precisely, I recommend just using the REPL. As the exercises get more complex, I think we will want slicker output. Worksheets seem to be a scala tool that aspire to be, but fall short of Jupyter notebooks style functionality. I tried VS Code, and saw screenshots of IntelliJ, but I'm not sure if they are worth the effort.
+
+A few options appear to exist for Scala in Jupyter notebooks: [Almond](https://almond.sh/) and [Jupyter Scala](https://jupyter-scala.org/) and [Apache Zeppelin](https://zeppelin.apache.org/docs/0.10.1/quickstart/spark_with_zeppelin.html). I have not tried any of these yet.
