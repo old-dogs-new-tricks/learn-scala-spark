@@ -1,0 +1,10 @@
+
+services:
+  spark-shell:
+    image: apache/spark:latest
+    tty: true
+    stdin_open: true
+    command: 
+      - /opt/spark/bin/spark-shell
+    volumes: 
+      - ./work:/opt/spark/work-dir

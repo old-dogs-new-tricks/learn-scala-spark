@@ -1,0 +1,2 @@
+STACK_SERVICES= spark-server spark-worker spark-shell
+

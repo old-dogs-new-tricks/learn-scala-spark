@@ -1,0 +1,15 @@
+
+services:
+  spark-worker:
+    image: apache/spark:latest
+    depends_on:
+      - spark-server
+    environment:
+      - SPARK_NO_DAEMONIZE=true
+    entrypoint: 
+      - /opt/spark/sbin/start-worker.sh 
+      - spark://spark-server:7077
+    volumes: 
+      - ./work:/opt/spark/work-dir
+
+
