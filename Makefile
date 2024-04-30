@@ -1,4 +1,4 @@
--include decomposer.mk # optional (discouraged for now) https://github.com/caracolazuldev/d-composer
+include decomposer.mk
 
 export DEBUG=1
 
@@ -12,3 +12,6 @@ scala repl:
 
 bash:
 	$(DKC) $(call exec-or-run,spark-shell) /bin/bash
+
+scalac:
+	$(DKC) $(call exec-or-run,scalac)

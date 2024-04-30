@@ -4,3 +4,5 @@
 .scala-build
 .metals
 .vscode
+docker-compose.*
+*.class
