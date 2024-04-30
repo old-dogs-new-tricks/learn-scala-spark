@@ -1,6 +1,13 @@
+
+# # #
+# Makefile to compile Scala source files
+# Learning to walk before we run
+# by avoiding learning build tools like sbt.
+# # #
+
 SCALAC = scalac
 SRC_DIR = src
-OUT_DIR = out
+OUT_DIR = .
 
 SRCS = $(wildcard $(SRC_DIR)/*.scala)
 OBJS = $(patsubst $(SRC_DIR)/%.scala, $(OUT_DIR)/%.class, $(SRCS))
@@ -14,4 +21,4 @@ $(OUT_DIR)/%.class: $(SRC_DIR)/%.scala
 	$(SCALAC) -d $(OUT_DIR) $<
 
 clean:
-	rm -rf $(OUT_DIR)
+	rm -rf $(OUT_DIR)/*.class
