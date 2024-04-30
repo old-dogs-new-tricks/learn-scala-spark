@@ -1,0 +1,40 @@
+
+services:
+
+  spark-server:
+    image: apache/spark:latest
+    entrypoint: 
+      - /opt/spark/sbin/start-master.sh
+    environment:
+      - SPARK_LOCAL_IP=spark-server
+      - SPARK_WORKLOAD=master
+      - SPARK_NO_DAEMONIZE=true
+    ports:
+      - "7077:7077"  # Spark Server port
+      - "8080:8080"  # Spark Server Web UI port
+
+  spark-worker:
+    image: apache/spark:latest
+    depends_on:
+      - spark-server
+    environment:
+      - SPARK_NO_DAEMONIZE=true
+    entrypoint: 
+      - /opt/spark/sbin/start-worker.sh 
+      - spark://spark-server:7077
+    volumes: 
+      - ./work:/opt/spark/work-dir
+    
+  spark-shell:
+    image: apache/spark:latest
+    tty: true
+    stdin_open: true
+    command: 
+      - /opt/spark/bin/spark-shell
+    environment:
+     - SPARK_LOCAL_IP=spark-shell
+    ports:
+     - 4040:4040
+    volumes: 
+      - ./work:/opt/spark/work-dir
+                                                                                                          

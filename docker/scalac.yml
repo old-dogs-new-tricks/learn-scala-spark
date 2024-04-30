@@ -1,0 +1,12 @@
+
+services:
+
+  scalac:
+    image: scalac:2.13
+    build:
+      context: docker/scalac
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./work:/app
+      

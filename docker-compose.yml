@@ -1,5 +1,12 @@
-name: scala
 services:
+  scalac:
+    build:
+      context: ./docker/scalac
+    image: scalac:2.13
+    stdin_open: true
+    tty: true
+    volumes:
+    - ./work:/app:rw
   spark-server:
     entrypoint:
     - /opt/spark/sbin/start-master.sh
@@ -35,11 +42,7 @@ services:
     stdin_open: true
     tty: true
     volumes:
-    - type: bind
-      source: /home/mzd/Lab/scala/work
-      target: /opt/spark/work-dir
-      bind:
-        create_host_path: true
+    - ./work:/opt/spark/work-dir:rw
   spark-worker:
     depends_on:
       spark-server:

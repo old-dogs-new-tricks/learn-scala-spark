@@ -12,3 +12,6 @@ scala repl:
 
 bash:
 	$(DKC) $(call exec-or-run,spark-shell) /bin/bash
+
+scalac:
+	$(DKC) $(call exec-or-run,scalac)
