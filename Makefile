@@ -1,4 +1,4 @@
--include decomposer.mk # optional (discouraged for now) https://github.com/caracolazuldev/d-composer
+include decomposer.mk
 
 export DEBUG=1
 
